@@ -1,0 +1,15 @@
+class NumMatrix:
+
+    def __init__(self, matrix: List[List[int]]):
+        self.matrix = matrix
+        
+    def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
+        # submatrix = [row[col1: col2 + 1] for row in self.matrix[row1 : row2 + 1]]
+        # total = sum([sum(row) for row in submatrix])
+        sumed_matrix = sum([sum(row[col1: col2 + 1]) for row in self.matrix[row1 : row2 + 1]])
+        return sumed_matrix
+
+
+# Your NumMatrix object will be instantiated and called as such:
+# obj = NumMatrix(matrix)
+# param_1 = obj.sumRegion(row1,col1,row2,col2)
